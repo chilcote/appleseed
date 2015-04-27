@@ -36,7 +36,7 @@ Launch vagrant, which will spin up a copy of OS X and automate the download of t
 
     vagrant up
 
-You will see output indicating progress, and when finished there will be a copy of the package in the `./data` directory. There is also a `./data/seed_url` file which contains the build number a direct download link for the update package in case you need to download it again.
+You will see output indicating progress, and when finished there will be a copy of the package in the `./data` directory. There is also a `./data/seed_url` file which contains the build number as well as a direct download link for the update package in case you need to download it again.
 
     ls ./data
     OSXUpd10.10.4.pkg seed_url
