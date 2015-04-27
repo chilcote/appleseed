@@ -1,0 +1,3 @@
+*.dmg
+.vagrant/
+.DS_Store
