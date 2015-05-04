@@ -1,21 +1,21 @@
 appleseed
 =========
 
-This script uses vagrant to download the latest OS X seed.
+This script uses [vagrant](https://github.com/chilcote/vfuse/wiki/Vagrant) to download the latest OS X seed. 
 
 Requirements
 ------------
 
 + VMware Fusion 7.x Professional
 + OS X 10.10.3+
-+ An OS X [vagrant box](https://github.com/chilcote/vfuse) (valid OS X license required)
++ An OS X [vagrant box](https://github.com/chilcote/vfuse/wiki/Vagrant) (valid OS X license required)
 + [Vagrant VMware provider](http://www.vagrantup.com/vmware) (purchase required)
 + [OS X Software Update Seed Configuration Utility](https://developer.apple.com/devcenter/download.action?path=/OS_X_Server/OS_X_Software_Update_Seed_Configuration_Utility/OS_X_Software_Update_Seed_Configuration_Utility.dmg) (Apple Developer account required)
 
 Prerequisite
 ------------
 
-You must have an updated OS X vagrant box (10.10.3 as of this writing). Due to licencing restrictions, it is not advisable to publicly post an OS X vagrant box. You will need to create one yourself using a valid copy of Install OS X Yosemite.app. I do this using [vfuse](https://github.com/chilcote/vfuse) or [osx-vm-templates](https://github.com/timsutton/osx-vm-templates).
+You must have an updated OS X vagrant box (10.10.3 as of this writing). Due to licencing restrictions, it is not advisable to publicly post an OS X vagrant box. You will need to create one yourself using a valid copy of Install OS X Yosemite.app. See [vfuse](https://github.com/chilcote/vfuse/wiki/Vagrant) or [osx-vm-templates](https://github.com/timsutton/osx-vm-templates) for two ways create an OS X vagrant box. 
 
 Instructions
 ------------
