@@ -16,7 +16,7 @@
 #  under the License.
 ##############################################################################
 
-import subprocess, glob, shutil, plistlib
+import subprocess, glob, shutil, plistlib, re
 
 def mount_dmg(dmg):
     p = subprocess.check_output(['/usr/bin/hdiutil', 'attach', dmg, '-plist'])
@@ -32,8 +32,8 @@ def install(pkg):
 def get_update_id():
     p = subprocess.check_output(['/usr/sbin/softwareupdate', '-l'])
     for line in p.splitlines():
-        if 'OSXUpd' in line:
-            return line.split('* ')[1].strip(), line.split('(')[1].strip()[:-1]
+        if '-(' in line:
+            return line.split('* ')[1].strip(), re.findall("\((.*?)\)", line)[0]
 
 def download_seed(seed):
     p = subprocess.Popen(['sudo', '/usr/sbin/softwareupdate', '-d', seed])
@@ -57,4 +57,4 @@ def main():
     print 'URL: %s' % url
 
 if __name__ == '__main__':
-  main()
+    main()
