@@ -32,8 +32,8 @@ def install(pkg):
 def get_update_id():
     p = subprocess.check_output(['/usr/sbin/softwareupdate', '-l'])
     for line in p.splitlines():
-        if '-(' in line:
-            return line.split('* ')[1].strip(), re.findall("\((.*?)\)", line)[0]
+        if 'Developer Beta' in line:
+            return line.split('* ')[1].strip()
 
 def download_seed(seed):
     p = subprocess.Popen(['sudo', '/usr/sbin/softwareupdate', '-d', seed])
@@ -46,14 +46,12 @@ def dl_url():
 def main():
     mount = mount_dmg(glob.glob('/private/var/tmp/*.dmg')[0])
     install(glob.glob(mount + '/*.pkg')[0])
-    update_id, build = get_update_id()
+    update_id = get_update_id()
     download_seed(update_id)
-    shutil.copy(glob.glob('/Library/Updates/031-*/OSXUpd*')[0], '/vagrant_data/')
+    shutil.copy(glob.glob('/Library/Updates/031-*/macOSUpd*')[0], '/vagrant_data/')
     url = dl_url()
     with open('/vagrant_data/seed_url', 'w') as f:
-        f.write(build + '\n')
         f.write(url)
-    print 'Build: %s' % build
     print 'URL: %s' % url
 
 if __name__ == '__main__':
